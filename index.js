@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 const allowedOrigins = ["http://localhost:5173", "https://paste-client.vercel.app"];
 app.use(cors({
-    origin: 'https://paste-client.vercel.app', // Allow requests from your frontend
+    origin: allowedOrigins, // Allow requests from your frontend
     credentials: true, // Allow cookies and authentication headers
     methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
     allowedHeaders: 'Content-Type,Authorization' // Allowed headers
