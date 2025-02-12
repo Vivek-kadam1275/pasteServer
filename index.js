@@ -13,7 +13,7 @@ const port=process.env.PORT || 4000;
 
 app.use(cookieParser());
 
-const allowedOrigins = ["http://localhost:5173", "https://paste-client.vercel.app/"];
+const allowedOrigins = ["http://localhost:5173", "https://paste-client.vercel.app"];
 app.use(cors({
     origin:allowedOrigins,
     credentials: true,
