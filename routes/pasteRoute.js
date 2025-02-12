@@ -1,13 +1,14 @@
 import express from "express"
-import { addPaste, deletePaste, updatePaste,getPastes, getPaste } from "../controllers.js/pasteController.js";
+import { addPaste, deletePaste, updatePaste,getPastes, getPaste } from "../controllers/pasteController.js";
+import { auth } from "../middlewares/authMiddleware.js";
 
-const router=express.Router();
+const router=express.Router(); 
 
-router.post('/addPaste',addPaste);
-router.put('/updatePaste/:id',updatePaste);
-router.delete('/deletePaste/:id',deletePaste);
-router.get('/getPastes',getPastes);
-router.get('/getPaste/:id',getPaste);
+router.post('/addPaste',auth,addPaste);
+router.put('/updatePaste/:id',auth,updatePaste);
+router.delete('/deletePaste/:id',auth,deletePaste);
+router.get('/getPastes',auth,getPastes);
+router.get('/getPaste/:id',auth,getPaste);
 
 export default router;
 

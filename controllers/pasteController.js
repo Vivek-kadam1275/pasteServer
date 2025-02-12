@@ -3,10 +3,10 @@ import Paste from "../models/pasteModel.js";
 
 export const addPaste=async (req,res)=>{
     try {
-        const {title,content}=req.body;
-
+        const {title,content}=req.body; 
+        const userId=req.body.user;
         const response=await Paste.create({
-            title,content,createdAt:new Date().toDateString(),
+            title,content,createdAt:new Date().toDateString(),userId
         })
 
         console.log(response);
@@ -88,7 +88,9 @@ export const getPaste=async(req,res)=>{
 
 export const getPastes=async(req,res)=>{
     try {
-        const response=await Paste.find({});
+        const userId=req.body.user;
+        console.log(userId);
+        const response=await Paste.find({userId});
         res.status(200)
         .json({
             success:true,

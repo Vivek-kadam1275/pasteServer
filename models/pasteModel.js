@@ -14,7 +14,11 @@ const pasteSchema=new mongoose.Schema({
     createdAt:{
         type:String,
         required:true,
-    }
+    },
+    userId: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "User" 
+    },
 })
 
 export default mongoose.model("Paste",pasteSchema);
