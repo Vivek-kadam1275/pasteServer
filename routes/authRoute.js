@@ -34,7 +34,7 @@ router.get("/logout", (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite: "None",
-            domain: "paste-client.vercel.app", // Set this to your domain (optional)
+            // domain: "localhost:5173", // Set this to your domain (optional)
             path: "/", // Ensure it's removed for all paths
         });
         console.log(req.cookies.loginCookie);
