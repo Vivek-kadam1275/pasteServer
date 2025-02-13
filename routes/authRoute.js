@@ -34,8 +34,8 @@ router.get("/logout", (req, res) => {
             httpOnly: true,
             secure: true,
             sameSite: "None",
-            domain: ".vercel.app" ,// ✅ Ensure it clears across subdomains
-            path: "/", // Ensure it's removed for all paths
+            // domain: ".vercel.app" ,// ✅ Ensure it clears across subdomains
+            // path: "/", // Ensure it's removed for all paths
         });
         console.log(req.cookies.loginCookie);
         res.json({
