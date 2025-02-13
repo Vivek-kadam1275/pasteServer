@@ -13,12 +13,12 @@ const port=process.env.PORT || 4000;
 
 app.use(cookieParser());
 
-const allowedOrigins = ["http://localhost:5173", "https://paste-client.vercel.app","https://pasteclient.onrender.com","https://elaborate-marigold-94bf88.netlify.app"];
+const allowedOrigins = ["http://localhost:5173", "https://paste-client.vercel.app","https://pasteclient.onrender.com","https://elaborate-marigold-94bf88.netlify.app","https://dancing-donut-f03689.netlify.app"];
 app.use(cors({
     origin: allowedOrigins, // Allow requests from your frontend
     credentials: true, // Allow cookies and authentication headers
-    methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
-    allowedHeaders: 'Content-Type,Authorization' // Allowed headers
+    // methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
+    // allowedHeaders: 'Content-Type,Authorization' // Allowed headers
 }));
 app.use(express.json());
 app.get('/',(req,res)=>{
