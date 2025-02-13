@@ -28,8 +28,15 @@ router.get("/verify", (req, res) => {
 
 router.get("/logout", (req, res) => {
     try {
+        console.log("into logout");
         console.log(req.cookies.loginCookie);
-        res.clearCookie("loginCookie", { httpOnly: true, secure: true, sameSite: "None" });
+        res.clearCookie("loginCookie", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "None",
+            domain: ".yourdomain.com", // Set this to your domain (optional)
+            path: "/", // Ensure it's removed for all paths
+        });
         console.log(req.cookies.loginCookie);
         res.json({
             success: true,
